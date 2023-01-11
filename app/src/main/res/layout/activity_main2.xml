@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/splitVerticalUnfixed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalUnfixed" />
+
+            <Button
+                android:id="@+id/splitVerticalUnfixedLandscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalUnfixedLandscape" />
+
+            <Button
+                android:id="@+id/splitVerticalUnfixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalUnfixedPortrait" />
+
+            <Button
+                android:id="@+id/splitVerticalFixedNatural"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalFixedNatural" />
+
+            <Button
+                android:id="@+id/splitVerticalFixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalFixedPortrait" />
+
+            <Button
+                android:id="@+id/splitVerticalFixedLandcape"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitVerticalFixedLandcape" />
+
+
+
+
+            <Button
+                android:id="@+id/splitHorizontalUnfixed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalUnfixed" />
+
+            <Button
+                android:id="@+id/splitHorizontalUnfixedLandscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalUnfixedLandscape" />
+
+            <Button
+                android:id="@+id/splitHorizontalUnfixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalUnfixedPortrait" />
+
+            <Button
+                android:id="@+id/splitHorizontalFixedNatural"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalFixedNatural" />
+
+            <Button
+                android:id="@+id/splitHorizontalFixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalFixedPortrait" />
+
+            <Button
+                android:id="@+id/splitHorizontalFixedLandcape"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="splitHorizontalFixedLandcape" />
+            <Button
+                android:id="@+id/fullUnfixed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullUnfixed" />
+
+            <Button
+                android:id="@+id/fullUnfixedLandscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullUnfixedLandscape" />
+
+            <Button
+                android:id="@+id/fullUnfixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullUnfixedPortrait" />
+
+            <Button
+                android:id="@+id/fullFixedNatural"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullFixedNatural" />
+
+            <Button
+                android:id="@+id/fullFixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullFixedPortrait" />
+
+            <Button
+                android:id="@+id/fullFixedLandcape"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fullFixedLandcape" />
+
+            <Button
+                android:id="@+id/stackedUnfixed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedUnfixed" />
+
+            <Button
+                android:id="@+id/stackedUnfixedLandscape"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedUnfixedLandscape" />
+
+            <Button
+                android:id="@+id/stackedUnfixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedUnfixedPortrait" />
+
+            <Button
+                android:id="@+id/stackedFixedNatural"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedFixedNatural" />
+
+
+            <Button
+                android:id="@+id/stackedFixedPortrait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedFixedPortrait" />
+
+            <Button
+                android:id="@+id/stackedFixedLandcape"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="stackedFixedLandcape" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

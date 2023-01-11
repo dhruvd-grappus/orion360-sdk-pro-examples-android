@@ -33,7 +33,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import fi.finwe.orion360.sdk.pro.examples.MainMenu;
+
 import fi.finwe.orion360.sdk.pro.examples.R;
 import fi.finwe.orion360.sdk.pro.SimpleOrionActivity;
 import fi.finwe.orion360.sdk.pro.texture.OrionVideoTexture;

@@ -31,12 +31,14 @@ package fi.finwe.orion360.sdk.pro.examples.minimal;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
+import android.graphics.RectF;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
-import fi.finwe.orion360.sdk.pro.examples.MainMenu;
+import fi.finwe.orion360.sdk.pro.examples.ObjectWrapperForBinder;
 import fi.finwe.orion360.sdk.pro.examples.R;
 import fi.finwe.orion360.sdk.pro.SimpleOrionActivity;
 import fi.finwe.orion360.sdk.pro.viewport.OrionDisplayViewport;
@@ -88,8 +90,14 @@ public class MinimalVRVideoFilePlayer extends SimpleOrionActivity {
         // render the image separately for left and right eye, and apply lens distortion
         // compensation and field-of-view (FOV) locking to configured values.
         setVRMode(true);
-        getOrionView().bindViewports(OrionDisplayViewport.VIEWPORT_CONFIG_SPLIT_VERTICAL,
-                OrionDisplayViewport.CoordinateType.UNFIXED_LANDSCAPE);
+
+
+        RectF [] view= (RectF[]) ((ObjectWrapperForBinder) getIntent().getExtras().getBinder("view")).getData();
+        OrionDisplayViewport.CoordinateType type= (OrionDisplayViewport.CoordinateType) ((ObjectWrapperForBinder) getIntent().getExtras().getBinder("type")).getData();
+        getOrionView().bindViewports(view,
+                type);
+        Toast.makeText(MinimalVRVideoFilePlayer.this, view.toString()+type.name(),
+                Toast.LENGTH_SHORT).show();
         // The user should always have an easy-to-find method for returning from VR mode to
         // normal mode. Here we use touch events, as it is natural to try tapping the screen
         // if you don't know what else to do. Start by propagating touch events from the
@@ -100,33 +108,35 @@ public class MinimalVRVideoFilePlayer extends SimpleOrionActivity {
         // Then, handle tap and long press events based on VR mode state. Typically you
         // want to associate long tap for entering/exiting VR mode and inform the user
         // that this hidden feature exists (at least when the user is stuck in VR mode).
-        mGestureDetector = new GestureDetector(this,
-                new GestureDetector.SimpleOnGestureListener() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CUPCAKE) {
+            mGestureDetector = new GestureDetector(this,
+                    new GestureDetector.SimpleOnGestureListener() {
 
-                    @Override
-                    public boolean onSingleTapConfirmed(MotionEvent e) {
+                        @Override
+                        public boolean onSingleTapConfirmed(MotionEvent e) {
 
-                        // Notify user how to enter/exit VR mode with long press.
-                        String message;
-                        if (!isVRModeEnabled()) {
-                            message = getString(R.string.player_long_tap_hint_enter_vr_mode);
-                        } else {
-                            message = getString(R.string.player_long_tap_hint_exit_vr_mode);
+                            // Notify user how to enter/exit VR mode with long press.
+                            String message;
+                            if (!isVRModeEnabled()) {
+                                message = getString(R.string.player_long_tap_hint_enter_vr_mode);
+                            } else {
+                                message = getString(R.string.player_long_tap_hint_exit_vr_mode);
+                            }
+                            Toast.makeText(MinimalVRVideoFilePlayer.this, message,
+                                    Toast.LENGTH_SHORT).show();
+
+                            return true;
                         }
-                        Toast.makeText(MinimalVRVideoFilePlayer.this, message,
-                                Toast.LENGTH_SHORT).show();
 
-                        return true;
-                    }
+                        @Override
+                        public void onLongPress(MotionEvent e) {
 
-                    @Override
-                    public void onLongPress(MotionEvent e) {
+                            // Enter or exit VR mode.
+                            setVRMode(!isVRModeEnabled());
 
-                        // Enter or exit VR mode.
-                        setVRMode(!isVRModeEnabled());
+                        }
 
-                    }
-
-                });
-	}
+                    });
+        }
+    }
 }
