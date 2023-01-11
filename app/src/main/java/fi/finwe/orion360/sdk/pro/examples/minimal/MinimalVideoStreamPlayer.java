@@ -61,7 +61,11 @@ public class MinimalVideoStreamPlayer extends SimpleOrionActivity {
     /** Buffering indicator, to be shown while buffering video from the network. */
     private ProgressBar mBufferingIndicator;
 
-
+    static String cam140mbpsH264= "https://srigsite.cdnsrv.jio.com/cdndp.cdn.jio.com/bpk-tv/IPLLive360_CAM01_40Mbps/IPLLive/index.m3u8";
+    static  String cam120mbpsH264="https://srigsite.cdnsrv.jio.com/cdndp.cdn.jio.com/bpk-tv/IPLLive360_CAM01_20Mbps/IPLLive/index.m3u8";
+    static  String cam240mbps="https://srigsite.cdnsrv.jio.com/cdndp.cdn.jio.com/bpk-tv/IPLLive360_CAM01_02_40Mbps/IPLLive/index.m3u8";
+    static  String cam220mps="https://srigsite.cdnsrv.jio.com/cdndp.cdn.jio.com/bpk-tv/IPLLive360_CAM01_02_20Mbps/IPLLive/index.m3u8";
+    static  String verticalSplit="https://jio-ar-dev.s3.ap-south-1.amazonaws.com/video/3d_2.mp4";
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -76,14 +80,14 @@ public class MinimalVideoStreamPlayer extends SimpleOrionActivity {
 
         // Get buffering indicator, and make it visible initially (buffering will be needed).
         mBufferingIndicator = (ProgressBar) findViewById(R.id.buffering_indicator);
-        mBufferingIndicator.setVisibility(View.VISIBLE);
+        mBufferingIndicator.setVisibility(View.INVISIBLE);
 
         // Set Orion360 view (defined in the layout) that will be used for rendering 360 content.
         setOrionView(R.id.orion_view_container);
 
         // Set a URI that points to an .mp4 video-on-demand stream in the network.
         // Encode video with web/progressive setting enabled for best performance.
-        setContentUri(MainMenu.TEST_VIDEO_URI_1280x640);
+        setContentUri(cam220mps);
 
         // Notice that accessing video streams over a network connection requires INTERNET
         // permission to be specified in the manifest file.

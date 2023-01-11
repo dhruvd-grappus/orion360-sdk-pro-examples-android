@@ -30,6 +30,7 @@
 package fi.finwe.orion360.sdk.pro.examples.minimal;
 
 import android.annotation.SuppressLint;
+import android.content.ComponentName;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -38,6 +39,7 @@ import android.widget.Toast;
 import fi.finwe.orion360.sdk.pro.examples.MainMenu;
 import fi.finwe.orion360.sdk.pro.examples.R;
 import fi.finwe.orion360.sdk.pro.SimpleOrionActivity;
+import fi.finwe.orion360.sdk.pro.viewport.OrionDisplayViewport;
 
 /**
  * An example of a minimal Orion360 video player, with VR mode enabled.
@@ -80,13 +82,14 @@ public class MinimalVRVideoFilePlayer extends SimpleOrionActivity {
         setOrionView(R.id.orion_view_container);
 
         // Initialize Orion360 view with a URI to a local .mp4 video file.
-        setContentUri(MainMenu.PRIVATE_EXTERNAL_FILES_PATH + MainMenu.TEST_VIDEO_FILE_MQ);
+        setContentUri(MinimalVideoStreamPlayer.verticalSplit);
 
         // Configure video view for VR mode. This will split the screen horizontally,
         // render the image separately for left and right eye, and apply lens distortion
         // compensation and field-of-view (FOV) locking to configured values.
         setVRMode(true);
-
+        getOrionView().bindViewports(OrionDisplayViewport.VIEWPORT_CONFIG_SPLIT_VERTICAL,
+                OrionDisplayViewport.CoordinateType.UNFIXED_LANDSCAPE);
         // The user should always have an easy-to-find method for returning from VR mode to
         // normal mode. Here we use touch events, as it is natural to try tapping the screen
         // if you don't know what else to do. Start by propagating touch events from the
