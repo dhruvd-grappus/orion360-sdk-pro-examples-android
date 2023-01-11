@@ -47,7 +47,7 @@ public class VideoActivity extends AppCompatActivity {
         map(R.id.splitHorizontalFixedNatural,OrionDisplayViewport.VIEWPORT_CONFIG_SPLIT_HORIZONTAL, OrionDisplayViewport.CoordinateType.FIXED_NATURAL);
         map(R.id.splitHorizontalFixedPortrait,OrionDisplayViewport.VIEWPORT_CONFIG_SPLIT_HORIZONTAL, OrionDisplayViewport.CoordinateType.FIXED_PORTRAIT);
         map(R.id.splitHorizontalFixedLandcape,OrionDisplayViewport.VIEWPORT_CONFIG_SPLIT_HORIZONTAL, OrionDisplayViewport.CoordinateType.FIXED_LANDSCAPE);
-        
+
 
         map(R.id.fullUnfixed,OrionDisplayViewport.VIEWPORT_CONFIG_FULL, OrionDisplayViewport.CoordinateType.UNFIXED);
         map(R.id.fullUnfixedLandscape,OrionDisplayViewport.VIEWPORT_CONFIG_FULL, OrionDisplayViewport.CoordinateType.UNFIXED_LANDSCAPE);
